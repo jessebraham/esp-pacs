@@ -250,7 +250,7 @@ fn generate_package(workspace: &Path, chip: &Chip) -> Result<()> {
     writeln!(
         File::create(path.join("build.rs"))?,
         "{}",
-        svd2rust::util::build_rs()
+        svd2rust::util::build_rs(&config)
     )?;
 
     format(&path)?;
